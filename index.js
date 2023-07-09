@@ -159,15 +159,14 @@ async function addLabel(messages) {
     }
 }
 //random interval of 45 to 120 sec
-const getRandomSeconds = () => 1000 * (Math.floor(Math.random() * (120 - 44) + 46));
+const getRandomSeconds = () => 1000 * (Math.floor(Math.random() * (120 - 45) + 46));
 
 // main function
 async function start(auth) {
     access_token = auth.credentials.access_token;
     let time = getRandomSeconds();
 
-    setInter
-    l(async () => {
+    setInterval(async () => {
         const labelStatus = await checkLabelExist('VACATION');
         if (labelStatus) {
             labelId = labelStatus;
